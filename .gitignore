@@ -128,12 +128,71 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# VS Code
-.vscode/
+# Streamlit
+.streamlit/
 
-# PyCharm
+# Configuration files with sensitive data
+config.py
+*.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+
+# SSL certificates
+ssl/
+*.pem
+*.key
+*.crt
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Docker volumes
+data/
+uploads/
 
 # Meraki specific
-config.py
-*.log
+meraki_dashboard_backup.py
+meraki_dashboard_old_backup.py
+meraki_dashboard_robust.py
+start_dashboard.*
+fix_*.py
+integrate_webhook_data.py
+webhook_analytics_integration.py
+webhook_dashboard_tab.py
+webhook_receiver.py
+webhook_test_tool.py
+
+# Company specific files
+icent_logo.png
+*logo*.png
+*logo*.jpg
+*logo*.jpeg
+company_logo.png
+*company_logo*

@@ -36,13 +36,53 @@ A professional-grade Streamlit application for comprehensive Meraki network moni
 
 ### 1. Installation
 
+#### **Option A: Docker Deployment (Recommended for Production)**
+
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/YOUR_USERNAME/meraki-dashboard-pro.git
+cd meraki-dashboard-pro
+
+# Copy configuration template
+cp config_example.py config.py
+
+# Edit configuration with your API key
+nano config.py
+
+# Deploy with Docker Compose
+docker compose up -d
+```
+
+#### **Option B: Local Development**
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/meraki-dashboard-pro.git
 cd meraki-dashboard-pro
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Copy configuration template
+cp config_example.py config.py
+
+# Edit configuration with your API key
+nano config.py
+
+# Run the application
+streamlit run meraki_dashboard_complete_final.py
+```
+
+#### **Option C: Ubuntu Server Deployment**
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/meraki-dashboard-pro.git
+cd meraki-dashboard-pro
+
+# Run automated deployment script
+chmod +x deploy_ubuntu.sh
+./deploy_ubuntu.sh
 ```
 
 ### 2. Configuration
@@ -206,6 +246,97 @@ pip install -r requirements.txt
 - **Advanced Machine Learning** insights
 - **Integration APIs** for other tools
 - **Mobile App** version
+
+## 🚀 Deployment
+
+### **Ubuntu Server Deployment**
+
+For production deployment on Ubuntu Server, use our automated deployment script:
+
+```bash
+# Clone and deploy
+git clone https://github.com/YOUR_USERNAME/meraki-dashboard-pro.git
+cd meraki-dashboard-pro
+chmod +x deploy_ubuntu.sh
+./deploy_ubuntu.sh
+```
+
+### **Docker Deployment**
+
+```bash
+# Using Docker Compose
+docker compose up -d
+
+# Using Docker directly
+docker build -t meraki-dashboard .
+docker run -p 8501:8501 -v $(pwd)/config.py:/app/config.py meraki-dashboard
+```
+
+### **Service Management**
+
+```bash
+# Start services
+sudo systemctl start meraki-dashboard
+
+# Stop services
+sudo systemctl stop meraki-dashboard
+
+# View logs
+docker compose logs -f
+
+# Restart services
+docker compose restart
+```
+
+### **Access URLs**
+
+- **Dashboard**: `http://your-server-ip:8501`
+- **Nginx Proxy**: `http://your-server-ip` (port 80)
+- **HTTPS**: `https://your-domain.com` (with SSL)
+
+For detailed deployment instructions, see [GITHUB_DEPLOYMENT_GUIDE.md](GITHUB_DEPLOYMENT_GUIDE.md).
+
+## 🎨 Customization
+
+### **Company Branding**
+- Add your company logo
+- Customize company name and colors
+- Modify login page design
+- Set up organization filtering
+
+### **Quick Setup**
+1. **Copy configuration template**:
+   ```bash
+   cp config_example.py config.py
+   ```
+
+2. **Edit config.py** with your settings:
+   ```python
+   # API Configuration
+   MERAKI_API_KEY = "your_meraki_api_key_here"
+   
+   # Login Configuration
+   LOGIN_USERNAME = "your_username"
+   LOGIN_PASSWORD = "your_secure_password"
+   
+   # Company Branding
+   COMPANY_LOGO_PATH = "your_company_logo.png"
+   COMPANY_NAME = "Your Company Name"
+   COMPANY_TAGLINE = "Your Company Tagline"
+   
+   # Organization Management
+   DEFAULT_ORGANIZATION = "your_org_id"
+   ALLOWED_ORGANIZATION_IDS = ["org1", "org2", "org3"]
+   ```
+
+3. **Add your company logo** to the project root
+
+4. **Run the application**:
+   ```bash
+   streamlit run meraki_dashboard_complete_final.py
+   ```
+
+For detailed customization instructions, see [CUSTOMIZATION_GUIDE.md](CUSTOMIZATION_GUIDE.md).
 
 ## 🤝 Contributing
 

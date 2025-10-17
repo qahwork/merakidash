@@ -1,0 +1,301 @@
+/* Enhanced Styles for Meraki Dashboard */
+
+/* Module Container Styles - Card-like boxes */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-left: 4px solid #FF6B35;
+}
+
+.card-info {
+    border-left-color: #3B82F6;
+}
+
+.card-success {
+    border-left-color: #10B981;
+}
+
+.card-warning {
+    border-left-color: #F59E0B;
+}
+
+.card-danger {
+    border-left-color: #DC2626;
+}
+
+/* Dashboard Header Styles */
+.dashboard-header {
+    color: #333333;
+    font-size: 2.2em !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FF6B35;
+}
+
+/* Section Header Styles */
+.section-header {
+    color: #1E3A8A;
+    font-size: 1.4em !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Sub-section Header Styles */
+.subsection-header {
+    color: #2C5282;
+    font-size: 1.2em !important;
+    font-weight: 500 !important;
+    margin: 10px 0 !important;
+}
+
+/* Metric Value Styles */
+.metric-value {
+    font-size: 1.8em !important;
+    font-weight: 700 !important;
+    color: #1a56db;
+}
+
+.metric-label {
+    font-size: 0.95em !important;
+    color: #4B5563;
+    font-weight: 500 !important;
+}
+
+/* Status Indicator Styles */
+.status-online {
+    color: #059669;
+    font-weight: 600;
+}
+
+.status-offline {
+    color: #DC2626;
+    font-weight: 600;
+}
+
+.status-warning {
+    color: #D97706;
+    font-weight: 600;
+}
+
+.status-dormant {
+    color: #6B7280;
+    font-weight: 600;
+}
+
+/* Tab Styling */
+div[data-testid="stVerticalBlock"] div[data-testid="stHorizontalBlock"] div[role="tablist"] button[role="tab"] {
+    background-color: #f8f9fa;
+    border-radius: 5px 5px 0 0;
+    padding: 10px 15px;
+    margin-right: 2px;
+    font-weight: 500;
+}
+
+div[data-testid="stVerticalBlock"] div[data-testid="stHorizontalBlock"] div[role="tablist"] button[role="tab"][aria-selected="true"] {
+    background-color: #FF6B35;
+    color: white;
+}
+
+/* Table Styles */
+.styled-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.styled-table thead tr {
+    background-color: #f3f4f6;
+    color: #374151;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f9fafb;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Dashboard Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+/* Alert Box Styles */
+.alert-box {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #3B82F6;
+}
+
+.alert-warning {
+    background-color: #FEF3C7;
+    border-left-color: #F59E0B;
+}
+
+.alert-danger {
+    background-color: #FEE2E2;
+    border-left-color: #EF4444;
+}
+
+.alert-success {
+    background-color: #D1FAE5;
+    border-left-color: #10B981;
+}
+
+.alert-info {
+    background-color: #DBEAFE;
+    border-left-color: #3B82F6;
+}
+
+/* Better Dataframe Styling */
+.dataframe-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: auto;
+    max-height: 500px;
+}
+
+.dataframe {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem !important;
+}
+
+.dataframe th {
+    background-color: #f3f4f6 !important;
+    color: #374151 !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+    padding: 12px 15px !important;
+    border: none !important;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.dataframe td {
+    padding: 10px 15px !important;
+    border: none !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.dataframe tr:nth-child(even) {
+    background-color: #f9fafb !important;
+}
+
+.dataframe tr:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* Better button styles */
+.stButton > button {
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: #2563EB;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+.stButton > button:active {
+    background-color: #1D4ED8;
+}
+
+/* icent brand color highlights */
+.icent-primary {
+    color: #FF6B35 !important;
+}
+
+.icent-secondary {
+    color: #1E3A8A !important;
+}
+
+/* Optimize main content and sidebar layout */
+.block-container {
+    max-width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Metric card layout */
+.metrics-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3B82F6;
+}
+
+.metric-card h3 {
+    margin: 0 0 10px 0;
+    color: #4B5563;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.metric-card .value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a56db;
+    margin-bottom: 5px;
+}
+
+.metric-card .subtext {
+    font-size: 0.8rem;
+    color: #6B7280;
+}
+
+/* For distinct separation of sections */
+.section-divider {
+    height: 2px;
+    background-color: #e5e7eb;
+    margin: 30px 0;
+}
+
+

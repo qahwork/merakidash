@@ -1,0 +1,80 @@
+# Meraki Network Analytics Dashboard Pro - PowerShell Launcher
+# Enhanced Network Performance & Analytics Platform
+
+param(
+    [string]$Port = "8501"
+)
+
+# UTF-8 인코딩 설정
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+Write-Host ""
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "🚀 Meraki Network Analytics Dashboard Pro" -ForegroundColor Green
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host ""
+
+# Python 설치 확인
+try {
+    $pythonVersion = python --version 2>&1
+    Write-Host "✅ Python 설치 확인됨: $pythonVersion" -ForegroundColor Green
+} catch {
+    Write-Host "❌ Python이 설치되지 않았습니다." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "💡 Python을 설치해주세요:" -ForegroundColor Yellow
+    Write-Host "   1. https://www.python.org/downloads/ 방문" -ForegroundColor White
+    Write-Host "   2. Python 3.8+ 다운로드 및 설치" -ForegroundColor White
+    Write-Host "   3. 'Add Python to PATH' 체크박스 선택" -ForegroundColor White
+    Write-Host ""
+    Read-Host "계속하려면 Enter를 누르세요"
+    exit 1
+}
+
+# 가상환경 확인 및 생성
+if (-not (Test-Path "venv")) {
+    Write-Host ""
+    Write-Host "🔧 가상환경 생성 중..." -ForegroundColor Yellow
+    python -m venv venv
+    Write-Host "✅ 가상환경 생성 완료" -ForegroundColor Green
+}
+
+# 가상환경 활성화
+Write-Host ""
+Write-Host "🔄 가상환경 활성화 중..." -ForegroundColor Yellow
+& "venv\Scripts\Activate.ps1"
+
+# 의존성 설치 확인
+if (-not (Test-Path "venv\Lib\site-packages\streamlit")) {
+    Write-Host ""
+    Write-Host "📦 필요한 패키지 설치 중..." -ForegroundColor Yellow
+    pip install -r requirements.txt
+    Write-Host "✅ 패키지 설치 완료" -ForegroundColor Green
+} else {
+    Write-Host "✅ 필요한 패키지가 이미 설치되어 있습니다" -ForegroundColor Green
+}
+
+# 대시보드 실행
+Write-Host ""
+Write-Host "🚀 Meraki Dashboard 시작 중..." -ForegroundColor Green
+Write-Host "📱 웹 브라우저가 자동으로 열립니다" -ForegroundColor White
+Write-Host "🔐 사이드바에서 Meraki API 키를 입력하거나 Demo 모드를 활성화하세요" -ForegroundColor White
+Write-Host ""
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host ""
+
+try {
+    # Streamlit 실행
+    streamlit run meraki_dashboard_complete_final.py --server.port $Port
+} catch {
+    Write-Host ""
+    Write-Host "❌ 오류가 발생했습니다." -ForegroundColor Red
+    Write-Host "💡 다음을 확인해주세요:" -ForegroundColor Yellow
+    Write-Host "   1. Python이 올바르게 설치되었는지" -ForegroundColor White
+    Write-Host "   2. 인터넷 연결 상태" -ForegroundColor White
+    Write-Host "   3. 방화벽 설정" -ForegroundColor White
+    Write-Host ""
+    Read-Host "계속하려면 Enter를 누르세요"
+}
+
+Write-Host ""
+Read-Host "종료하려면 Enter를 누르세요"
